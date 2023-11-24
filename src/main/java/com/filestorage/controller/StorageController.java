@@ -22,7 +22,25 @@ public class StorageController {
     }
 
     @DeleteMapping("/deleteFile")
-    public ResponseEntity<String> deleteFile(@RequestParam String bucketName, String key) throws IOException {
+    public ResponseEntity<String> deleteFile(@RequestParam String bucketName, String key) {
         return new ResponseEntity<>(storageService.deleteFile(bucketName, key), HttpStatus.OK);
+    }
+
+    /*
+    This api for getting the s3 file url using s3 presigner.
+    The presigned URL has an expiration time and can be used to grant temporary access to the S3 object.
+     */
+    @GetMapping("/getFileUrl")
+    public ResponseEntity<String> getUrlForS3Object(@RequestParam String fileName) {
+        return new ResponseEntity<>(storageService.getUrlForS3Object(fileName), HttpStatus.OK);
+    }
+
+    /*
+    This api for getting the s3 file url.
+    The regular URL can be used to access the S3 object without any time restrictions.
+     */
+    @GetMapping("/getObjectFileUrl")
+    public ResponseEntity<String> getObjectUrlForS3Object(@RequestParam String fileName) {
+        return new ResponseEntity<>(storageService.getObjectUrlForS3Object(fileName), HttpStatus.OK);
     }
 }

@@ -9,4 +9,8 @@ public interface StorageService {
     String uploadFile(MultipartFile file) throws IOException;
 
     String deleteFile(String bucketName, String key);
+
+    String getUrlForS3Object(String fileName);
+
+    String getObjectUrlForS3Object(String fileName);
 }
