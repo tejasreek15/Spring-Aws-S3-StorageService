@@ -36,7 +36,7 @@ public class StorageController {
     }
 
     /*
-    This api for o generate the URL for accessing the S3 object.
+    This api for to generate the URL for accessing the S3 object.
     The regular URL can be used to access the S3 object without any time restrictions.
      */
     @GetMapping("/getObjectFileUrl")
