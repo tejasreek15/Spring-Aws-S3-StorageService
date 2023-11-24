@@ -1,0 +1,14 @@
+cloud:
+  aws:
+    credentials:
+      access-key: <your-aws-access-key>
+      secret-key: <your-aws-secret-key>
+    region:
+      static: <your-aws-s3-bucket-region>
+    stack:
+      auto: false
+
+
+application:
+  bucket:
+    name: <your-aws-s3-bucket-name>
