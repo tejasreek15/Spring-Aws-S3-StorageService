@@ -27,7 +27,7 @@ public class StorageController {
     }
 
     /*
-    This api for getting the s3 file url using s3 presigner.
+    This api for to generate a presigned URL for accessing the S3 object.
     The presigned URL has an expiration time and can be used to grant temporary access to the S3 object.
      */
     @GetMapping("/getFileUrl")
@@ -36,7 +36,7 @@ public class StorageController {
     }
 
     /*
-    This api for getting the s3 file url.
+    This api for o generate the URL for accessing the S3 object.
     The regular URL can be used to access the S3 object without any time restrictions.
      */
     @GetMapping("/getObjectFileUrl")
